@@ -25,6 +25,7 @@ $(function () {
     //         console.error('Error fetching data:', errorThrown);
     //     }
     // });
+    var batas = 0;
     tampilkanDataHome();
     tampilkanDataDashboard();
 
@@ -44,19 +45,75 @@ $(function () {
     });
 
 
+    // $('#pencarian').on('keyup', function(){
+    //     var keyword = $(this).val();
+    //     console.log(keyword);
+    //     $.ajax({
+    //         url: 'http://localhost/tokopakaian/public/home/getDataCari',
+    //         method: 'POST',
+    //         dataType: 'json',
+    //         data: {keyword: keyword},
+    //         success: function(response){
+    //             console.log('ini adalah respons : ' + response);
+    //             $('#tableDashboard').empty();
+    //             addDashboardTable(response);
+    //         }
+    //     });
+    // });
+
     $('#pencarian').on('keyup', function(){
-        var keyword = this.value;
+        var keyword = $(this).val();
         console.log(keyword);
+        if(keyword === ''){
+            $('#tableDashboard').empty();
+            tampilkanDataDashboard();
+        } else {
+            $.ajax({
+                url: 'http://localhost/tokopakaian/public/home/getDataCari',
+                method: 'POST',
+                dataType: 'json',
+                data: {keyword: keyword},
+                success: function(response){
+                    console.log('ini adalah respons : ' + response);
+                    $('#tableDashboard').empty();
+                    addDashboardTable(response);
+                }
+            });
+        }
+    });
+
+    $('#no-kanan').on('click', function(){
+        console.log('ok');
+    });
+
+    $('#no-tengah').on('click', function(){
+        console.log('ok');
+        batas = 10;
         $.ajax({
-            url: 'http://localhost/tokopakaian/public/home/getDataCari',
-            method: 'POST',
+            url: 'http://localhost/tokopakaian/public/dashboard/getDataPagination',
+            method: 'post',
             dataType: 'json',
-            data: {keyword: keyword},
+            data: {batas: batas},
             success: function(response){
-                console.log('ini adalah respons : ' + response);
+                console.log(response);
+                $('#tableDashboard').empty();
+                addDashboardTable(response);
             }
         });
     });
+
+    // $('#dataTable').DataTable({
+    //     ajax: 'http://localhost/tokopakaian/public/dashboard/getData',
+    //     columns: [
+    //         {data: 'nama'},
+    //         {data: 'harga'},
+    //         {data: 'stok'},
+    //         {data: 'gambar'},
+    //         {data: 'ukuran'},
+    //         {data: 'warna'},
+    //         {data: 'diskon'}
+    //     ]
+    // });
 
 });
 

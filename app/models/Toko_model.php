@@ -11,7 +11,13 @@ class Toko_model {
 
     public function getAllData()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT * FROM ' . $this->table . ' LIMIT 10');
+        return $this->db->resultSet();
+    }
+
+    public function getAllDataPagination($batas)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table .' LIMIT 10 OFFSET ' . $batas);
         return $this->db->resultSet();
     }
 
@@ -23,7 +29,9 @@ class Toko_model {
 
     public function getDataCari($keyword)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE nama LIKE %'. $keyword .'%');
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE nama LIKE :keyword');
+        $searchValue = '%' . $keyword . '%';
+        $this->db->bind('keyword', $searchValue);
         return $this->db->resultSet();
     }
 

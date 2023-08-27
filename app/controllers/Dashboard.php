@@ -59,6 +59,16 @@ class Dashboard extends Controller
         echo json_encode($data);
     }
 
+    public function getDataPagination()
+    {
+        
+        $batas = $_POST['batas'];
+        $data['barangs'] = $this->model('Toko_model')->getAllDataPagination($batas);
+        // header('Content-Type: application/json');
+        // echo json_encode($batas);
+        echo json_encode($data);
+    }
+
     public function addBarang()
     {
         $gambar = "img/desain-baju-polos-png-17.jpg";

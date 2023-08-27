@@ -31,3 +31,49 @@ input::-webkit-inner-spin-button {
   border-radius: 50%;
   color: red;
 } */
+
+#pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#pagination #pagination-kiri {
+  height: 40px;
+  width: 35px;
+  margin-right: 10px;
+  border: solid 2px black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#pagination #pagination-kiri img {
+  height: 100%;
+  width: 100%;
+}
+
+#pagination #pagination-kanan {
+  height: 40px;
+  width: 35px;
+  margin-right: 10px;
+  border: solid 2px black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#pagination #pagination-kanan img {
+  height: 100%;
+  width: 100%;
+}
+
+#no-kanan, #no-tengah, #no-kiri {
+  height: 40px;
+  width: 35px;
+  border: solid 2px black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+}

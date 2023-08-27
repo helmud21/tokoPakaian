@@ -21,9 +21,9 @@ class Home extends Controller
 
     public function getDataCari()
     {
-        $keyword = $_POST;
-        echo $keyword;
-        // $data['barangs'] = $this->model('Toko_model')->getDataCari($keyword);
-        // echo json_encode($data);
+        $keyword = $_POST['keyword'];
+        // var_dump($keyword);
+        $data['barangs'] = $this->model('Toko_model')->getDataCari($keyword);
+        echo json_encode($data);
     }
 }

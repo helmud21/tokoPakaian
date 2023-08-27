@@ -7,6 +7,7 @@
     <title>Halaman <?= $data['title'] ?></title>
 
     <link rel="stylesheet" href="<?= BASEURL ?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>/css/datatables.min.css">
     <link rel="stylesheet" href="<?= BASEURL ?>/css/style.css">
 </head>
 

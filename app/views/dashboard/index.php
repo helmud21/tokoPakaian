@@ -17,6 +17,35 @@
             <table class="table table-striped" id="tableDashboard">
 
             </table>
+            <div class="d-flex" id="pagination">
+                <div class="" id="pagination-kiri">
+                    <img src="<?= BASEURL; ?>/img/pagination_kiri.png" alt="">
+                </div>
+                <div id="no-kanan">1</div>
+                <div id="no-tengah">2</div>
+                <div id="no-kanan">3</div>
+                <div class="" id="pagination-kanan">
+                    <img src="<?= BASEURL; ?>/img/pagination_kanan.png" alt="">
+                </div>
+            </div>
+            <!-- <div>
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Nama Barang</th>
+                            <th>Harga Barang</th>
+                            <th>Stok</th>
+                            <th>Gambar</th>
+                            <th>Ukuran</th>
+                            <th>Warna</th>
+                            <th>Diskon</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div> -->
         </div>
     </div>
 
@@ -60,12 +89,12 @@
                             <label for="diskon" class="form-label">Diskon</label>
                             <input type="number" class="form-control" id="diskon" name="diskon">
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
                     </form>
-                    
+
                 </div>
             </div>
         </div>
